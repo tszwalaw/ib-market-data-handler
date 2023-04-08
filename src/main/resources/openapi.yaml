@@ -1,0 +1,53 @@
+openapi: 3.0.1
+info:
+  title: Interactive brokers market data handler
+  description: 'Interactive brokers market data handler'
+  version: 1.0.0
+
+servers:
+  - url: https://localhost:8080/v1
+
+paths:
+  /subscribe:
+    post:
+      tags:
+        - subscription-controller
+      operationId: subscribe
+      description: 'This endpoint will subscribe the product in IB'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SubscriptionRequest'
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SubscriptionResponse'
+        '400':
+          description: 'Request failed'
+          content: {}
+        '500':
+          description: 'SERVER ERROR'
+          content: {}
+
+
+components:
+  schemas:
+    SubscriptionRequest:
+      type: object
+      required:
+        - productCode
+      properties:
+        productCode:
+          type: string
+
+    SubscriptionResponse:
+      type: object
+      properties:
+        time:
+          type: string
+          example: '2023-04-08T13:07:59.923'
