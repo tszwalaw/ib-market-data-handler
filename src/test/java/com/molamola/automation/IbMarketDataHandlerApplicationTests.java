@@ -1,4 +1,4 @@
-package com.molamola.automation.ibmarketdatahandler;
+package com.molamola.automation;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

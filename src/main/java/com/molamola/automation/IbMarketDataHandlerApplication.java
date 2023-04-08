@@ -1,4 +1,4 @@
-package com.molamola.automation.ibmarketdatahandler;
+package com.molamola.automation;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

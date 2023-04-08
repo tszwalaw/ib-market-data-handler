@@ -52,6 +52,11 @@
 			<version>${springfox-version}</version>
 		</dependency>
 		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger-ui</artifactId>
+			<version>3.0.0</version>
+		</dependency>
+		<dependency>
 			<groupId>com.google.code.gson</groupId>
 			<artifactId>gson</artifactId>
 			<version>${google-gson-version}</version>
@@ -145,7 +150,7 @@
 							<goal>generate</goal>
 						</goals>
 						<configuration>
-							<inputSpec>src/main/resources/openapi.yaml</inputSpec>
+							<inputSpec>${project.basedir}/src/main/resources/openapi.yaml</inputSpec>
 							<generatorName>spring</generatorName>
 							<apiPackage>com.molamola.automation</apiPackage>
 							<modelPackage>com.molamola.automation.model</modelPackage>
